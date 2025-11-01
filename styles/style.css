@@ -42,6 +42,13 @@ nav{
 .versel-logo-section h1{
     font-size: 25px;
 }
+.fa-rectangle-xmark{
+    transform: translateX(100px);
+}
+.return-xmark{
+     transform:translateX(0);
+}
+
 .navbar-lists{
     height: 0vh;
     pointer-events: none;
@@ -99,24 +106,16 @@ nav{
     display: none;
 }
 
-.hamberg-image img{
-    width: 40px;
-    height: 35px;
-}
+
 .down-arrow{
     display: none;
 }
- .switch-mode-icons-potrait{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 15px;
-        margin: 15px;
-    }
+   
      .switch-mode-icons-potrait div{
         border: 1px solid #E1E4EB;
         border-radius: 20px;
          padding: 5px;
+         width: fit-content;
     }
       .switch-mode-icons-potrait i{
         color: gray;

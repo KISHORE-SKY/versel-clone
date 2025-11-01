@@ -1,30 +1,20 @@
 //hamberg navbar 
 
 const navbarLists=document.getElementById('navlists');
-const hambergImageReplace=document.getElementById('hamberg-image');
+let hamberg=document.querySelector('.ri-menu-4-line');
 let isShouldOpen=false;
-let isDarkMode=false;
-
-hambergImageReplace.addEventListener('click',()=>{
-    if(!isShouldOpen){
-        hambergImageReplace.src="assets/images/close.png";
-        navbarLists.classList.add('navbar-lists-visible');
-        isShouldOpen=true;
-    }
-    else{
-        
-    if (isDarkMode) {
-      hambergImageReplace.src = "assets/images/dark-hamburger-menu.png";
-    } else {
-      hambergImageReplace.src = "assets/images/light-mode-hamberg.png";
-  }
-        navbarLists.classList.remove('navbar-lists-visible');
-        isShouldOpen=false;
-    }
-    
+let close=document.querySelector('.fa-rectangle-xmark');
+hamberg.addEventListener('click',()=>{ 
+    hamberg.classList.remove('ri-menu-4-line');
+    close.classList.add('return-xmark');
+    navbarLists.classList.add('navbar-lists-visible');
 })
 
-
+close.addEventListener('click',()=>{
+    close.classList.remove('return-xmark');
+    hamberg.classList.add('ri-menu-4-line');
+    navbarLists.classList.remove('navbar-lists-visible');
+})
 
 //dark and light mode switch
 
@@ -52,9 +42,8 @@ let isclicked=false;
 darkMoonMode.forEach(icon=>{ 
 icon.addEventListener('click',()=>{
   
-   isDarkMode = true;
-hambergImageReplace.src="assets/images/dark-hamburger-menu.png";
-
+hamberg.style.color='white';
+close.style.color='white';
 bodyBackgroundColor.classList.add('body-darkmode');
 bodyBackgroundColor.classList.remove('body-site');
 
@@ -117,7 +106,6 @@ footerSocialIcons.forEach(list=>{
 })
 
 
-
 })
 })
 
@@ -128,9 +116,8 @@ sunIconLightMode.forEach(icon=>{
 
 icon.addEventListener('click',()=>{
 
-isDarkMode = true;
-hambergImageReplace.src="assets/images/light-mode-hamberg.png";
-
+hamberg.style.color='black';
+close.style.color='black';
 bodyBackgroundColor.classList.add('body-site');
 bodyBackgroundColor.classList.remove('body-darkmode');
 
@@ -149,7 +136,7 @@ strongTag.forEach(element=>{
     element.style.color='black';
 })
 boldTag.forEach(element=>{
-    element.style.color='white';
+    element.style.color='black';
 })
 
 potraitNavbarLoginButton.style.backgroundColor='black';
